@@ -40,6 +40,21 @@ const posts = [
 const timelineEl = document.getElementById('timeline-el')
 let timelineTemplate = ''
 
+function updateLike(i) {
+    const likeCountEl = document.getElementById(`post-likes-count-${i}`)
+    const heartIconEl = document.getElementById(`post-heart-icon-${i}`)
+    if (posts[i].liked === false) {
+        posts[i].likes += 1
+        likeCountEl.innerText = posts[i].likes
+        posts[i].liked = true
+    } else {
+        posts[i].likes -= 1
+        likeCountEl.innerText = posts[i].likes
+        posts[i].liked = false
+    }
+    heartIconEl.classList.toggle('heart-icon-liked')
+}
+
 for(let i = 0; i < posts.length; i++) {
     const post = posts[i]
     const articleTemplate = `
@@ -71,17 +86,3 @@ for(let i = 0; i < posts.length; i++) {
 
 timelineEl.innerHTML = timelineTemplate
 
-function updateLike(i) {
-    const likeCountEl = document.getElementById(`post-likes-count-${i}`)
-    const heartIconEl = document.getElementById(`post-heart-icon-${i}`)
-    if (posts[i].liked === false) {
-        posts[i].likes += 1
-        likeCountEl.innerText = posts[i].likes
-        posts[i].liked = true
-    } else {
-        posts[i].likes -= 1
-        likeCountEl.innerText = posts[i].likes
-        posts[i].liked = false
-    }
-    heartIconEl.classList.toggle('heart-icon-liked')
-}
