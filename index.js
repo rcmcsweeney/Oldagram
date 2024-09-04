@@ -71,7 +71,7 @@ for(let i = 0; i < posts.length; i++) {
         </section>
         <section class="post-engagement-section">
             <div class="post-icons-wrapper">
-                <img class="post-icon post-icon-heart" id="post-heart-icon-${i}" onclick="updateLike(${i})" src="/images/icon-heart.png" alt="heart icon">
+                <img class="post-icon post-icon-heart" id="post-heart-icon-${i}" src="/images/icon-heart.png" alt="heart icon">
                 <img class="post-icon post-icon-comment" src="/images/icon-comment.png" alt="comment icon">
                 <img class="post-icon post-icon-share" src="/images/icon-dm.png" alt="share icon">
             </div>
@@ -86,3 +86,9 @@ for(let i = 0; i < posts.length; i++) {
 
 timelineEl.innerHTML = timelineTemplate
 
+for (let i = 0; i < posts.length; i++) {
+    const heartIconEl =  document.getElementById(`post-heart-icon-${i}`)
+    heartIconEl.addEventListener("click", function() {
+        updateLike(i)
+    })
+}
