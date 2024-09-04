@@ -114,6 +114,7 @@ header {
 .post-icon:hover {
     border-radius: 50%;
     overflow: visible;
+    cursor: pointer;
 }
 
 .post-icon-heart:hover {
