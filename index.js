@@ -71,7 +71,7 @@ for(let i = 0; i < posts.length; i++) {
 
 timelineEl.innerHTML = timelineTemplate
 
-let updateLike = (i) => {
+function updateLike(i) {
     const likeCountEl = document.getElementById(`post-likes-count-${i}`)
     const heartIconEl = document.getElementById(`post-heart-icon-${i}`)
     if (posts[i].liked === false) {
