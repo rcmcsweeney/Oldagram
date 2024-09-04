@@ -143,6 +143,8 @@ header {
 
 .post-comment-text {
     margin-left: 13px;
+    margin-right: 13px;
+    line-height: 1.25;
 }
 
 .post-comment-username {
